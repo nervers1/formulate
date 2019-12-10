@@ -1,0 +1,887 @@
+2019-12-09 15:10:02.179  INFO 82204 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 82204 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 15:10:02.214  INFO 82204 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 15:10:02.547  INFO 82204 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 15:10:02.596  INFO 82204 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 15:10:02.984  WARN 82204 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'forexHandler': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'forexRepository': Cannot resolve reference to bean 'reactiveMongoTemplate' while setting bean property 'reactiveMongoOperations'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reactiveMongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoReactiveDataAutoConfiguration.class]: Unsatisfied dependency expressed through method 'reactiveMongoTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reactiveMongoDatabaseFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoReactiveDataAutoConfiguration.class]: Unsatisfied dependency expressed through method 'reactiveMongoDatabaseFactory' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+2019-12-09 15:10:03.005  INFO 82204 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-09 15:10:03.014 ERROR 82204 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'forexHandler': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'forexRepository': Cannot resolve reference to bean 'reactiveMongoTemplate' while setting bean property 'reactiveMongoOperations'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reactiveMongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoReactiveDataAutoConfiguration.class]: Unsatisfied dependency expressed through method 'reactiveMongoTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reactiveMongoDatabaseFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoReactiveDataAutoConfiguration.class]: Unsatisfied dependency expressed through method 'reactiveMongoDatabaseFactory' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at kr.or.formulate.FormulateApplication.main(FormulateApplication.java:14)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'forexRepository': Cannot resolve reference to bean 'reactiveMongoTemplate' while setting bean property 'reactiveMongoOperations'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reactiveMongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoReactiveDataAutoConfiguration.class]: Unsatisfied dependency expressed through method 'reactiveMongoTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reactiveMongoDatabaseFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoReactiveDataAutoConfiguration.class]: Unsatisfied dependency expressed through method 'reactiveMongoDatabaseFactory' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1699)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1444)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reactiveMongoTemplate' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoReactiveDataAutoConfiguration.class]: Unsatisfied dependency expressed through method 'reactiveMongoTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reactiveMongoDatabaseFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoReactiveDataAutoConfiguration.class]: Unsatisfied dependency expressed through method 'reactiveMongoDatabaseFactory' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 32 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'reactiveMongoDatabaseFactory' defined in class path resource [org/springframework/boot/autoconfigure/data/mongo/MongoReactiveDataAutoConfiguration.class]: Unsatisfied dependency expressed through method 'reactiveMongoDatabaseFactory' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:798)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:539)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 42 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:885)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:789)
+	... 56 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 70 common frames omitted
+Caused by: java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.util.Assert.state(Assert.java:73)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createCredentialNetworkMongoClient(ReactiveMongoClientFactory.java:97)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createNetworkMongoClient(ReactiveMongoClientFactory.java:90)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createMongoClient(ReactiveMongoClientFactory.java:67)
+	at org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration.reactiveStreamsMongoClient(MongoReactiveAutoConfiguration.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 71 common frames omitted
+
+2019-12-09 15:17:09.342  INFO 79820 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 79820 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 15:17:09.346  INFO 79820 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 15:17:09.706  INFO 79820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 15:17:09.754  INFO 79820 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 15:17:10.203  INFO 79820 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:17:10.269  INFO 79820 --- [cluster-ClusterId{value='5dede6e68de4bb6ba7f646bd', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:135}] to localhost:27017
+2019-12-09 15:17:10.274  INFO 79820 --- [cluster-ClusterId{value='5dede6e68de4bb6ba7f646bd', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3536701}
+2019-12-09 15:17:10.837  WARN 79820 --- [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
+2019-12-09 15:17:10.935 DEBUG 79820 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 15:17:10.944 DEBUG 79820 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 15:17:10.967 DEBUG 79820 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 15:17:10.984 DEBUG 79820 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 15:17:11.424  INFO 79820 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:17:11.429  INFO 79820 --- [cluster-ClusterId{value='5dede6e78de4bb6ba7f646be', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:136}] to localhost:27017
+2019-12-09 15:17:11.430  INFO 79820 --- [cluster-ClusterId{value='5dede6e78de4bb6ba7f646be', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=712100}
+2019-12-09 15:17:11.461  WARN 79820 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+2019-12-09 15:17:11.483  INFO 79820 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-09 15:17:11.491 ERROR 79820 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at kr.or.formulate.FormulateApplication.main(FormulateApplication.java:12)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.util.Assert.state(Assert.java:73)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createCredentialNetworkMongoClient(ReactiveMongoClientFactory.java:97)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createNetworkMongoClient(ReactiveMongoClientFactory.java:90)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createMongoClient(ReactiveMongoClientFactory.java:67)
+	at org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration.reactiveStreamsMongoClient(MongoReactiveAutoConfiguration.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+
+2019-12-09 15:18:14.318  INFO 21280 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 21280 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 15:18:14.321  INFO 21280 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 15:18:14.680  INFO 21280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 15:18:14.728  INFO 21280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 15:18:15.205  INFO 21280 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:18:15.276  INFO 21280 --- [cluster-ClusterId{value='5dede727843a5572c11a114e', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:137}] to localhost:27017
+2019-12-09 15:18:15.281  INFO 21280 --- [cluster-ClusterId{value='5dede727843a5572c11a114e', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3449399}
+2019-12-09 15:18:15.666 DEBUG 21280 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 15:18:15.766 DEBUG 21280 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 15:18:15.788 DEBUG 21280 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 15:18:15.805 DEBUG 21280 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 15:18:16.182  INFO 21280 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:18:16.188  INFO 21280 --- [cluster-ClusterId{value='5dede728843a5572c11a114f', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:138}] to localhost:27017
+2019-12-09 15:18:16.189  INFO 21280 --- [cluster-ClusterId{value='5dede728843a5572c11a114f', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=900500}
+2019-12-09 15:18:16.220  WARN 21280 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+2019-12-09 15:18:16.238  INFO 21280 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-09 15:18:16.246 ERROR 21280 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at kr.or.formulate.FormulateApplication.main(FormulateApplication.java:12)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.util.Assert.state(Assert.java:73)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createCredentialNetworkMongoClient(ReactiveMongoClientFactory.java:97)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createNetworkMongoClient(ReactiveMongoClientFactory.java:90)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createMongoClient(ReactiveMongoClientFactory.java:67)
+	at org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration.reactiveStreamsMongoClient(MongoReactiveAutoConfiguration.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+
+2019-12-09 15:21:18.245  INFO 78196 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 78196 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 15:21:18.248  INFO 78196 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 15:21:18.621  INFO 78196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 15:21:18.665  INFO 78196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 15:21:19.101  INFO 78196 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:21:19.168  INFO 78196 --- [cluster-ClusterId{value='5dede7df242dac1af6da2767', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:139}] to localhost:27017
+2019-12-09 15:21:19.174  INFO 78196 --- [cluster-ClusterId{value='5dede7df242dac1af6da2767', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3406100}
+2019-12-09 15:21:19.610 DEBUG 78196 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 15:21:19.619 DEBUG 78196 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 15:21:19.644 DEBUG 78196 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 15:21:19.666 DEBUG 78196 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 15:21:20.053  INFO 78196 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:21:20.058  INFO 78196 --- [cluster-ClusterId{value='5dede7e0242dac1af6da2768', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:140}] to localhost:27017
+2019-12-09 15:21:20.060  INFO 78196 --- [cluster-ClusterId{value='5dede7e0242dac1af6da2768', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=684300}
+2019-12-09 15:21:20.090  WARN 78196 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+2019-12-09 15:21:20.107  INFO 78196 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-09 15:21:20.115 ERROR 78196 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at kr.or.formulate.FormulateApplication.main(FormulateApplication.java:12)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.util.Assert.state(Assert.java:73)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createCredentialNetworkMongoClient(ReactiveMongoClientFactory.java:97)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createNetworkMongoClient(ReactiveMongoClientFactory.java:90)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createMongoClient(ReactiveMongoClientFactory.java:67)
+	at org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration.reactiveStreamsMongoClient(MongoReactiveAutoConfiguration.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+
+2019-12-09 15:25:01.585  INFO 42576 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 42576 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 15:25:01.589  INFO 42576 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 15:25:01.947  INFO 42576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 15:25:01.992  INFO 42576 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 15:25:02.448  INFO 42576 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:25:02.519  INFO 42576 --- [cluster-ClusterId{value='5dede8be9c622e609ac874a9', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:141}] to localhost:27017
+2019-12-09 15:25:02.524  INFO 42576 --- [cluster-ClusterId{value='5dede8be9c622e609ac874a9', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3358199}
+2019-12-09 15:25:02.950 DEBUG 42576 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 15:25:02.960 DEBUG 42576 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 15:25:02.982 DEBUG 42576 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 15:25:03.002 DEBUG 42576 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 15:25:03.388  INFO 42576 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:25:03.394  INFO 42576 --- [cluster-ClusterId{value='5dede8bf9c622e609ac874aa', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:142}] to localhost:27017
+2019-12-09 15:25:03.395  INFO 42576 --- [cluster-ClusterId{value='5dede8bf9c622e609ac874aa', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=809400}
+2019-12-09 15:25:03.432  WARN 42576 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+2019-12-09 15:25:03.453  INFO 42576 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-09 15:25:03.462 ERROR 42576 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at kr.or.formulate.FormulateApplication.main(FormulateApplication.java:12)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.util.Assert.state(Assert.java:73)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createCredentialNetworkMongoClient(ReactiveMongoClientFactory.java:97)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createNetworkMongoClient(ReactiveMongoClientFactory.java:90)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createMongoClient(ReactiveMongoClientFactory.java:67)
+	at org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration.reactiveStreamsMongoClient(MongoReactiveAutoConfiguration.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+
+2019-12-09 15:34:48.101  INFO 84720 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 84720 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 15:34:48.105  INFO 84720 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 15:34:48.459  INFO 84720 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 15:34:48.504  INFO 84720 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 15:34:48.938  INFO 84720 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:34:49.006  INFO 84720 --- [cluster-ClusterId{value='5dedeb0811d63c2a77fe9a62', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:143}] to localhost:27017
+2019-12-09 15:34:49.011  INFO 84720 --- [cluster-ClusterId{value='5dedeb0811d63c2a77fe9a62', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3724901}
+2019-12-09 15:34:49.447 DEBUG 84720 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 15:34:49.455 DEBUG 84720 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 15:34:49.478 DEBUG 84720 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 15:34:49.497 DEBUG 84720 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 15:34:49.878  INFO 84720 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:34:49.884  INFO 84720 --- [cluster-ClusterId{value='5dedeb0911d63c2a77fe9a63', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:144}] to localhost:27017
+2019-12-09 15:34:49.885  INFO 84720 --- [cluster-ClusterId{value='5dedeb0911d63c2a77fe9a63', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=731500}
+2019-12-09 15:34:49.915  WARN 84720 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+2019-12-09 15:34:49.932  INFO 84720 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-09 15:34:49.940 ERROR 84720 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at kr.or.formulate.FormulateApplication.main(FormulateApplication.java:12)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.util.Assert.state(Assert.java:73)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createCredentialNetworkMongoClient(ReactiveMongoClientFactory.java:97)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createNetworkMongoClient(ReactiveMongoClientFactory.java:90)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createMongoClient(ReactiveMongoClientFactory.java:67)
+	at org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration.reactiveStreamsMongoClient(MongoReactiveAutoConfiguration.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+
+2019-12-09 15:35:25.599  INFO 82740 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 82740 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 15:35:25.603  INFO 82740 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 15:35:25.973  INFO 82740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 15:35:26.023  INFO 82740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 15:35:26.510  INFO 82740 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:35:26.585  INFO 82740 --- [cluster-ClusterId{value='5dedeb2edeeed12350af9f84', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:145}] to localhost:27017
+2019-12-09 15:35:26.590  INFO 82740 --- [cluster-ClusterId{value='5dedeb2edeeed12350af9f84', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3647300}
+2019-12-09 15:35:27.006 DEBUG 82740 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 15:35:27.016 DEBUG 82740 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 15:35:27.138 DEBUG 82740 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 15:35:27.159 DEBUG 82740 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 15:35:27.564  INFO 82740 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:35:27.569  INFO 82740 --- [cluster-ClusterId{value='5dedeb2fdeeed12350af9f85', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:146}] to localhost:27017
+2019-12-09 15:35:27.570  INFO 82740 --- [cluster-ClusterId{value='5dedeb2fdeeed12350af9f85', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=765101}
+2019-12-09 15:35:27.604  WARN 82740 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+2019-12-09 15:35:27.623  INFO 82740 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-09 15:35:27.634 ERROR 82740 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at kr.or.formulate.FormulateApplication.main(FormulateApplication.java:12)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.util.Assert.state(Assert.java:73)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createCredentialNetworkMongoClient(ReactiveMongoClientFactory.java:97)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createNetworkMongoClient(ReactiveMongoClientFactory.java:90)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createMongoClient(ReactiveMongoClientFactory.java:67)
+	at org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration.reactiveStreamsMongoClient(MongoReactiveAutoConfiguration.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+
+2019-12-09 15:36:25.048  INFO 83060 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 83060 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 15:36:25.052  INFO 83060 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 15:36:25.408  INFO 83060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 15:36:25.450  INFO 83060 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 15:36:25.883  INFO 83060 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:36:25.950  INFO 83060 --- [cluster-ClusterId{value='5dedeb69eb5f857039de7f68', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:147}] to localhost:27017
+2019-12-09 15:36:25.955  INFO 83060 --- [cluster-ClusterId{value='5dedeb69eb5f857039de7f68', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3665799}
+2019-12-09 15:36:26.381 DEBUG 83060 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 15:36:26.390 DEBUG 83060 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 15:36:26.413 DEBUG 83060 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 15:36:26.433 DEBUG 83060 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 15:36:26.798  INFO 83060 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:36:26.804  INFO 83060 --- [cluster-ClusterId{value='5dedeb6aeb5f857039de7f69', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:148}] to localhost:27017
+2019-12-09 15:36:26.805  INFO 83060 --- [cluster-ClusterId{value='5dedeb6aeb5f857039de7f69', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=713300}
+2019-12-09 15:36:26.836  WARN 83060 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+2019-12-09 15:36:26.853  INFO 83060 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-09 15:36:26.862 ERROR 83060 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at kr.or.formulate.FormulateApplication.main(FormulateApplication.java:12)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.util.Assert.state(Assert.java:73)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createCredentialNetworkMongoClient(ReactiveMongoClientFactory.java:97)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createNetworkMongoClient(ReactiveMongoClientFactory.java:90)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createMongoClient(ReactiveMongoClientFactory.java:67)
+	at org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration.reactiveStreamsMongoClient(MongoReactiveAutoConfiguration.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+
+2019-12-09 15:36:42.731  INFO 84564 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 84564 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 15:36:42.735  INFO 84564 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 15:36:43.129  INFO 84564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 15:36:43.176  INFO 84564 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 15:36:43.677  INFO 84564 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:36:43.757  INFO 84564 --- [cluster-ClusterId{value='5dedeb7b3a97f4217f73d243', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:149}] to localhost:27017
+2019-12-09 15:36:43.763  INFO 84564 --- [cluster-ClusterId{value='5dedeb7b3a97f4217f73d243', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3630300}
+2019-12-09 15:36:44.223 DEBUG 84564 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 15:36:44.233 DEBUG 84564 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 15:36:44.257 DEBUG 84564 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 15:36:44.278 DEBUG 84564 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 15:36:44.677  INFO 84564 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:36:44.683  INFO 84564 --- [cluster-ClusterId{value='5dedeb7c3a97f4217f73d244', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:150}] to localhost:27017
+2019-12-09 15:36:44.684  INFO 84564 --- [cluster-ClusterId{value='5dedeb7c3a97f4217f73d244', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=721799}
+2019-12-09 15:36:44.723  WARN 84564 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+2019-12-09 15:36:44.741  INFO 84564 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-09 15:36:44.750 ERROR 84564 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at kr.or.formulate.FormulateApplication.main(FormulateApplication.java:12)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.util.Assert.state(Assert.java:73)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createCredentialNetworkMongoClient(ReactiveMongoClientFactory.java:97)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createNetworkMongoClient(ReactiveMongoClientFactory.java:90)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createMongoClient(ReactiveMongoClientFactory.java:67)
+	at org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration.reactiveStreamsMongoClient(MongoReactiveAutoConfiguration.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+
+2019-12-09 15:38:44.900  INFO 65856 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 65856 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 15:38:44.904  INFO 65856 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 15:38:45.275  INFO 65856 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 15:38:45.317  INFO 65856 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 15:38:45.757  INFO 65856 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:38:45.829  INFO 65856 --- [cluster-ClusterId{value='5dedebf5f9d6d327d44551c1', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:151}] to localhost:27017
+2019-12-09 15:38:45.834  INFO 65856 --- [cluster-ClusterId{value='5dedebf5f9d6d327d44551c1', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3519899}
+2019-12-09 15:38:46.222 DEBUG 65856 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 15:38:46.231 DEBUG 65856 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 15:38:46.343 DEBUG 65856 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 15:38:46.362 DEBUG 65856 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 15:38:46.739  INFO 65856 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 15:38:46.744  INFO 65856 --- [cluster-ClusterId{value='5dedebf6f9d6d327d44551c2', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:152}] to localhost:27017
+2019-12-09 15:38:46.746  INFO 65856 --- [cluster-ClusterId{value='5dedebf6f9d6d327d44551c2', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=645700}
+2019-12-09 15:38:46.777  WARN 65856 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+2019-12-09 15:38:46.794  INFO 65856 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-09 15:38:46.804 ERROR 65856 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at kr.or.formulate.FormulateApplication.main(FormulateApplication.java:12)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.util.Assert.state(Assert.java:73)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createCredentialNetworkMongoClient(ReactiveMongoClientFactory.java:97)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createNetworkMongoClient(ReactiveMongoClientFactory.java:90)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createMongoClient(ReactiveMongoClientFactory.java:67)
+	at org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration.reactiveStreamsMongoClient(MongoReactiveAutoConfiguration.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+
+2019-12-09 15:38:58.315  INFO 84708 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 84708 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 15:38:58.318  INFO 84708 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 15:38:58.673  INFO 84708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 15:38:58.718  INFO 84708 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 15:38:59.090  WARN 84708 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'forexHandler': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'forexRepository': Cannot resolve reference to bean 'reactiveMongoTemplate' while setting bean property 'reactiveMongoOperations'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveMongoConfiguration': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.data.mongodb.uri' in value "${spring.data.mongodb.uri}"
+2019-12-09 15:38:59.112  INFO 84708 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-09 15:38:59.120 ERROR 84708 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'forexHandler': Unsatisfied dependency expressed through field 'repository'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'forexRepository': Cannot resolve reference to bean 'reactiveMongoTemplate' while setting bean property 'reactiveMongoOperations'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveMongoConfiguration': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.data.mongodb.uri' in value "${spring.data.mongodb.uri}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:643)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at kr.or.formulate.FormulateApplication.main(FormulateApplication.java:12)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'forexRepository': Cannot resolve reference to bean 'reactiveMongoTemplate' while setting bean property 'reactiveMongoOperations'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveMongoConfiguration': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.data.mongodb.uri' in value "${spring.data.mongodb.uri}"
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:342)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:113)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1699)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1444)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1287)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveMongoConfiguration': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.data.mongodb.uri' in value "${spring.data.mongodb.uri}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1422)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:594)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:409)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:330)
+	... 32 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'spring.data.mongodb.uri' in value "${spring.data.mongodb.uri}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:175)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:908)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1228)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1207)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:116)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 49 common frames omitted
+
+2019-12-09 16:05:33.469  INFO 79804 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 79804 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 16:05:33.472  INFO 79804 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 16:05:33.836  INFO 79804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 16:05:33.878  INFO 79804 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 16:05:34.324  INFO 79804 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:05:34.389  INFO 79804 --- [cluster-ClusterId{value='5dedf23ed007754abbc4e718', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:153}] to localhost:27017
+2019-12-09 16:05:34.395  INFO 79804 --- [cluster-ClusterId{value='5dedf23ed007754abbc4e718', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3687199}
+2019-12-09 16:05:34.838 DEBUG 79804 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 16:05:34.847 DEBUG 79804 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 16:05:34.875 DEBUG 79804 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 16:05:34.893 DEBUG 79804 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 16:05:35.268  INFO 79804 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:05:35.274  INFO 79804 --- [cluster-ClusterId{value='5dedf23fd007754abbc4e719', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:154}] to localhost:27017
+2019-12-09 16:05:35.275  INFO 79804 --- [cluster-ClusterId{value='5dedf23fd007754abbc4e719', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=678900}
+2019-12-09 16:05:35.305  WARN 79804 --- [main] onfigReactiveWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+2019-12-09 16:05:35.322  INFO 79804 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-09 16:05:35.329 ERROR 79804 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'reactiveStreamsMongoClient' defined in class path resource [org/springframework/boot/autoconfigure/mongo/MongoReactiveAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:656)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:636)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1338)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1177)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:557)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:879)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:878)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550)
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at kr.or.formulate.FormulateApplication.main(FormulateApplication.java:12)
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.mongodb.reactivestreams.client.MongoClient]: Factory method 'reactiveStreamsMongoClient' threw exception; nested exception is java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:651)
+	... 19 common frames omitted
+Caused by: java.lang.IllegalStateException: Invalid mongo configuration, either uri or host/port/credentials must be specified
+	at org.springframework.util.Assert.state(Assert.java:73)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createCredentialNetworkMongoClient(ReactiveMongoClientFactory.java:97)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createNetworkMongoClient(ReactiveMongoClientFactory.java:90)
+	at org.springframework.boot.autoconfigure.mongo.ReactiveMongoClientFactory.createMongoClient(ReactiveMongoClientFactory.java:67)
+	at org.springframework.boot.autoconfigure.mongo.MongoReactiveAutoConfiguration.reactiveStreamsMongoClient(MongoReactiveAutoConfiguration.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 20 common frames omitted
+
+2019-12-09 16:07:23.850  INFO 78992 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 78992 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 16:07:23.853  INFO 78992 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 16:07:24.217  INFO 78992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 16:07:24.259  INFO 78992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 16:07:24.708  INFO 78992 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:07:24.775  INFO 78992 --- [cluster-ClusterId{value='5dedf2ac88fc5f7730ce1f2b', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:155}] to localhost:27017
+2019-12-09 16:07:24.780  INFO 78992 --- [cluster-ClusterId{value='5dedf2ac88fc5f7730ce1f2b', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3362800}
+2019-12-09 16:07:25.224 DEBUG 78992 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 16:07:25.232 DEBUG 78992 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 16:07:25.255 DEBUG 78992 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 16:07:25.272 DEBUG 78992 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 16:07:25.643  INFO 78992 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:07:25.648  INFO 78992 --- [cluster-ClusterId{value='5dedf2ad88fc5f7730ce1f2c', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:156}] to localhost:27017
+2019-12-09 16:07:25.649  INFO 78992 --- [cluster-ClusterId{value='5dedf2ad88fc5f7730ce1f2c', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=622001}
+2019-12-09 16:07:25.747  INFO 78992 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:07:26.259  INFO 78992 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 8080
+2019-12-09 16:07:26.262  INFO 78992 --- [main] kr.or.formulate.FormulateApplication     : Started FormulateApplication in 2.96 seconds (JVM running for 3.881)
+2019-12-09 16:07:26.306  INFO 78992 --- [cluster-ClusterId{value='5dedf2ad88fc5f7730ce1f2d', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:157}] to localhost:27017
+2019-12-09 16:07:26.309  INFO 78992 --- [cluster-ClusterId{value='5dedf2ad88fc5f7730ce1f2d', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=2224099}
+2019-12-09 16:13:45.999  INFO 68996 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 68996 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 16:13:46.002  INFO 68996 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 16:13:46.367  INFO 68996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 16:13:46.410  INFO 68996 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 16:13:46.851  INFO 68996 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:13:46.920  INFO 68996 --- [cluster-ClusterId{value='5dedf42ac24b443a37bf207b', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:158}] to localhost:27017
+2019-12-09 16:13:46.926  INFO 68996 --- [cluster-ClusterId{value='5dedf42ac24b443a37bf207b', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4237000}
+2019-12-09 16:13:47.381 DEBUG 68996 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 16:13:47.389 DEBUG 68996 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 16:13:47.413 DEBUG 68996 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 16:13:47.432 DEBUG 68996 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 16:13:47.803  INFO 68996 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:13:47.808  INFO 68996 --- [cluster-ClusterId{value='5dedf42bc24b443a37bf207c', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:159}] to localhost:27017
+2019-12-09 16:13:47.809  INFO 68996 --- [cluster-ClusterId{value='5dedf42bc24b443a37bf207c', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=811701}
+2019-12-09 16:13:47.901  INFO 68996 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:13:48.408  INFO 68996 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 8080
+2019-12-09 16:13:48.411  INFO 68996 --- [main] kr.or.formulate.FormulateApplication     : Started FormulateApplication in 2.982 seconds (JVM running for 3.924)
+2019-12-09 16:13:48.454  INFO 68996 --- [cluster-ClusterId{value='5dedf42bc24b443a37bf207d', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:160}] to localhost:27017
+2019-12-09 16:13:48.456  INFO 68996 --- [cluster-ClusterId{value='5dedf42bc24b443a37bf207d', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1923400}
+2019-12-09 16:20:00.095  INFO 82036 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 82036 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 16:20:00.133  INFO 82036 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 16:20:00.474  INFO 82036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 16:20:00.515  INFO 82036 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 16:20:00.958  INFO 82036 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:20:01.029  INFO 82036 --- [cluster-ClusterId{value='5dedf5a00cb987003748852a', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:161}] to localhost:27017
+2019-12-09 16:20:01.035  INFO 82036 --- [cluster-ClusterId{value='5dedf5a00cb987003748852a', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3909401}
+2019-12-09 16:20:01.477 DEBUG 82036 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 16:20:01.487 DEBUG 82036 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 16:20:01.514 DEBUG 82036 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 16:20:01.534 DEBUG 82036 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 16:20:01.901  INFO 82036 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:20:01.906  INFO 82036 --- [cluster-ClusterId{value='5dedf5a10cb987003748852b', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:162}] to localhost:27017
+2019-12-09 16:20:01.907  INFO 82036 --- [cluster-ClusterId{value='5dedf5a10cb987003748852b', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=609700}
+2019-12-09 16:20:02.001  INFO 82036 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:20:02.518  INFO 82036 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 8080
+2019-12-09 16:20:02.521  INFO 82036 --- [main] kr.or.formulate.FormulateApplication     : Started FormulateApplication in 3.007 seconds (JVM running for 3.936)
+2019-12-09 16:20:02.565  INFO 82036 --- [cluster-ClusterId{value='5dedf5a20cb987003748852c', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:163}] to localhost:27017
+2019-12-09 16:20:02.567  INFO 82036 --- [cluster-ClusterId{value='5dedf5a20cb987003748852c', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1591600}
+2019-12-09 16:47:21.446  INFO 82712 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 82712 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 16:47:21.450  INFO 82712 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 16:47:21.817  INFO 82712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 16:47:21.858  INFO 82712 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 16:47:22.299  INFO 82712 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:47:22.368  INFO 82712 --- [cluster-ClusterId{value='5dedfc0a1e7a2c0d062e084c', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:164}] to localhost:27017
+2019-12-09 16:47:22.373  INFO 82712 --- [cluster-ClusterId{value='5dedfc0a1e7a2c0d062e084c', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3618301}
+2019-12-09 16:47:22.815 DEBUG 82712 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 16:47:22.825 DEBUG 82712 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 16:47:22.849 DEBUG 82712 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 16:47:22.868 DEBUG 82712 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 16:47:23.238  INFO 82712 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:47:23.244  INFO 82712 --- [cluster-ClusterId{value='5dedfc0b1e7a2c0d062e084d', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:165}] to localhost:27017
+2019-12-09 16:47:23.245  INFO 82712 --- [cluster-ClusterId{value='5dedfc0b1e7a2c0d062e084d', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=800099}
+2019-12-09 16:47:23.338  INFO 82712 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 16:47:23.841  INFO 82712 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 8080
+2019-12-09 16:47:23.844  INFO 82712 --- [main] kr.or.formulate.FormulateApplication     : Started FormulateApplication in 3.018 seconds (JVM running for 3.959)
+2019-12-09 16:47:23.885  INFO 82712 --- [cluster-ClusterId{value='5dedfc0b1e7a2c0d062e084e', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:166}] to localhost:27017
+2019-12-09 16:47:23.894  INFO 82712 --- [cluster-ClusterId{value='5dedfc0b1e7a2c0d062e084e', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=7731799}
+2019-12-09 17:24:34.765  INFO 82400 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 82400 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 17:24:34.770  INFO 82400 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 17:24:35.301  INFO 82400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 17:24:35.369  INFO 82400 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 17:24:35.977  INFO 82400 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 17:24:36.059  INFO 82400 --- [cluster-ClusterId{value='5dee04c3ddeb5e1dbc08ab6e', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:167}] to localhost:27017
+2019-12-09 17:24:36.066  INFO 82400 --- [cluster-ClusterId{value='5dee04c3ddeb5e1dbc08ab6e', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=4245701}
+2019-12-09 17:24:36.649 DEBUG 82400 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 17:24:36.660 DEBUG 82400 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 17:24:36.694 DEBUG 82400 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 17:24:36.713 DEBUG 82400 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 17:24:37.151  INFO 82400 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 17:24:37.320  INFO 82400 --- [cluster-ClusterId{value='5dee04c5ddeb5e1dbc08ab6f', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:168}] to localhost:27017
+2019-12-09 17:24:37.322  INFO 82400 --- [cluster-ClusterId{value='5dee04c5ddeb5e1dbc08ab6f', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=837300}
+2019-12-09 17:24:37.431  INFO 82400 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 17:24:38.003  INFO 82400 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 8080
+2019-12-09 17:24:38.006  INFO 82400 --- [main] kr.or.formulate.FormulateApplication     : Started FormulateApplication in 4.111 seconds (JVM running for 5.286)
+2019-12-09 17:24:38.053  INFO 82400 --- [cluster-ClusterId{value='5dee04c5ddeb5e1dbc08ab70', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:169}] to localhost:27017
+2019-12-09 17:24:38.055  INFO 82400 --- [cluster-ClusterId{value='5dee04c5ddeb5e1dbc08ab70', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1903301}
+2019-12-09 17:54:33.056  INFO 84780 --- [main] kr.or.formulate.FormulateApplication     : Starting FormulateApplication on JASON with PID 84780 (D:\Dev\IdeaProjects\formulate\build\classes\java\main started by formulate in D:\Dev\IdeaProjects\formulate)
+2019-12-09 17:54:33.059  INFO 84780 --- [main] kr.or.formulate.FormulateApplication     : No active profile set, falling back to default profiles: default
+2019-12-09 17:54:33.470  INFO 84780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Reactive MongoDB repositories in DEFAULT mode.
+2019-12-09 17:54:33.517  INFO 84780 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41ms. Found 1 Reactive MongoDB repository interfaces.
+2019-12-09 17:54:34.012  INFO 84780 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 17:54:34.084  INFO 84780 --- [cluster-ClusterId{value='5dee0bca713c3f6622fed46d', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:176}] to localhost:27017
+2019-12-09 17:54:34.089  INFO 84780 --- [cluster-ClusterId{value='5dee0bca713c3f6622fed46d', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=3290700}
+2019-12-09 17:54:34.581 DEBUG 84780 --- [main] o.s.w.r.f.s.s.RouterFunctionMapping      : 1 RouterFunction(s) in 'routerFunctionMapping'
+2019-12-09 17:54:34.591 DEBUG 84780 --- [main] o.s.w.r.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2019-12-09 17:54:34.616 DEBUG 84780 --- [main] o.s.w.r.r.m.a.ControllerMethodResolver   : ControllerAdvice beans: none
+2019-12-09 17:54:34.635 DEBUG 84780 --- [main] o.s.w.s.adapter.HttpWebHandlerAdapter    : enableLoggingRequestDetails='false': form data and headers will be masked to prevent unsafe logging of potentially sensitive data
+2019-12-09 17:54:35.041  INFO 84780 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 17:54:35.046  INFO 84780 --- [cluster-ClusterId{value='5dee0bcb713c3f6622fed46e', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:177}] to localhost:27017
+2019-12-09 17:54:35.047  INFO 84780 --- [cluster-ClusterId{value='5dee0bcb713c3f6622fed46e', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=658199}
+2019-12-09 17:54:35.151  INFO 84780 --- [main] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+2019-12-09 17:54:35.702  INFO 84780 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port(s): 8080
+2019-12-09 17:54:35.706  INFO 84780 --- [main] kr.or.formulate.FormulateApplication     : Started FormulateApplication in 3.266 seconds (JVM running for 4.255)
+2019-12-09 17:54:35.752  INFO 84780 --- [cluster-ClusterId{value='5dee0bcb713c3f6622fed46f', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:178}] to localhost:27017
+2019-12-09 17:54:35.754  INFO 84780 --- [cluster-ClusterId{value='5dee0bcb713c3f6622fed46f', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 1]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=1780500}

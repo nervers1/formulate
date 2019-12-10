@@ -1,0 +1,18 @@
+# 출력되는 로그에 색상 출력
+spring:
+  data:
+    mongodb:
+#      host: localhost
+#      port: 27017
+#      database: test
+      grid-fs-database: images
+      uri: mongodb://localhost:27017/user
+  output:
+    ansi:
+      enabled: always
+server:
+  port: 8080
+# 생성되는 로그 파일명
+logging:
+  file:
+    name: application.log
