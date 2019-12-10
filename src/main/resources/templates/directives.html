@@ -10,6 +10,9 @@
     <input type="text" v-bind:placeholder="placeholder" v-model:value="message"> <!-- v-model : 모델의 값을 그대로 보여주고, 값 변경시 모델도 변경된다. -->
     <br />
     <img class="ex_image" v-bind:src="imagePath" />
+<!--    <br />-->
+    <img class="ex_image2" v-bind:src="imagePath2" />
+    <img class="ex_image3" v-bind:src="imagePath3" />
     <br />
     <input type="text" v-bind:value="message"> <!-- v-bind : 입력한 모델의 값을 보여주기만 한다. 변경시 모델에 영향을 주지 않는다. -->
 </div>
@@ -24,12 +27,17 @@
 <div id="selectedFruits">
     선택한 과일들 : <span v-html="fruits"></span>
 </div>
+<div id="conditions">
+    <span v-show="ifSelectAll()">모두 다 선택하셨네요</span>
+</div>
 <script type="text/javascript">
     var model = {
         fruits: [],
         message: '입력값',
         placeholder: 'v-bind 디렉티브',
-        imagePath: 'https://st4.depositphotos.com/20816142/23655/i/1600/depositphotos_236551988-stock-photo-sketch-rabbit-small-furry-pet.jpg'
+        imagePath: 'https://cdna.artstation.com/p/assets/images/images/007/741/184/large/geoff-caldwell-rabbitsketch.jpg?1508207230',
+        imagePath2: 'https://i.redd.it/qopwr7mp3og11.jpg',
+        imagePath3: 'https://st4.depositphotos.com/20816142/23655/i/1600/depositphotos_236551988-stock-photo-sketch-rabbit-small-furry-pet.jpg'
     };
 
     var selectFruit = new Vue({
@@ -40,16 +48,33 @@
         el: '#selectedFruits',
         data: model
     });
+    var conditions = new Vue({
+        el: '#conditions',
+        data: model,
+        methods: {
+            ifSelectAll: function() {
+                if (this.fruits.length == 5) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+    });
     var simple = new Vue({
         el: '#simple',
         data: model
     });
+
 </script>
 <style type="text/css">
-    .ex_image { width: 350px; height: 350px; padding: 5px;}
+    .ex_image { width: 470px; height: 400px; padding: 5px; border-radius: 20px;}
+    .ex_image2 { width: 400px; height: 450px; padding: 5px; border-radius: 20px;}
+    .ex_image3 { width: 400px; height: 450px; padding: 5px; border-radius: 20px;}
     #selectFruits {position: relative; top: 20px; padding: 20px 10px; background-color: rgba(60, 230, 60, .7); width: 350px; border-radius: 4px; box-shadow: 3px 3px #598a25;}
     #selectFruits div {padding-bottom: 5px;}
     #selectedFruits {position: relative; top: 35px;}
+    #conditions {position: relative; top: 35px;}
 </style>
 </body>
 </html>
