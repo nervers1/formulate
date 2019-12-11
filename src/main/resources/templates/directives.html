@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-model="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Directives</title>
@@ -13,13 +13,14 @@
 <!--    <br />-->
     <img class="ex_image2" v-bind:src="imagePath2" />
     <img class="ex_image3" v-bind:src="imagePath3" />
+    <img class="ex_image4" v-bind:src="imagePath4" />
     <br />
     <input type="text" v-bind:value="message"> <!-- v-bind : 입력한 모델의 값을 보여주기만 한다. 변경시 모델에 영향을 주지 않는다. -->
 </div>
 <div id="selectFruits">
     <div>과일을 골라 보아요.</div>
-    <input type="checkbox" value="1" v-model.number="fruits">사과,
-    <input type="checkbox" value="2" v-model.number="fruits">키위,
+    <input type="checkbox" value="1" v-model.number="fruits"/>사과,
+    <input type="checkbox" value="2" v-model.number="fruits"/>키위,
     <input type="checkbox" value="3" v-model.number="fruits">포도,
     <input type="checkbox" value="4" v-model.number="fruits">수박,
     <input type="checkbox" value="5" v-model.number="fruits">참외
@@ -37,7 +38,8 @@
         placeholder: 'v-bind 디렉티브',
         imagePath: 'https://cdna.artstation.com/p/assets/images/images/007/741/184/large/geoff-caldwell-rabbitsketch.jpg?1508207230',
         imagePath2: 'https://i.redd.it/qopwr7mp3og11.jpg',
-        imagePath3: 'https://st4.depositphotos.com/20816142/23655/i/1600/depositphotos_236551988-stock-photo-sketch-rabbit-small-furry-pet.jpg'
+        imagePath3: 'https://st4.depositphotos.com/20816142/23655/i/1600/depositphotos_236551988-stock-photo-sketch-rabbit-small-furry-pet.jpg',
+        imagePath4: 'https://i.pinimg.com/originals/9f/66/98/9f6698773a81d828e3f9b29a3b20c627.jpg'
     };
 
     var selectFruit = new Vue({
@@ -53,7 +55,7 @@
         data: model,
         methods: {
             ifSelectAll: function() {
-                if (this.fruits.length == 5) {
+                if (this.fruits.length === 5) {
                     return true;
                 } else {
                     return false;
@@ -68,9 +70,16 @@
 
 </script>
 <style type="text/css">
-    .ex_image { width: 470px; height: 400px; padding: 5px; border-radius: 20px;}
+    .ex_image { width: 450px; height: 400px; padding: 5px; border-radius: 20px;
+        /*-moz-transform: scale(-1, 1);*/
+        /*-webkit-transform: scale(-1, 1);*/
+        /*-o-transform: scale(-1, 1);*/
+        /*transform: scale(-1, 1);*/
+        transform: rotate3d(1, 1, 1, 70deg);
+        /*filter: flipH()*/}
     .ex_image2 { width: 400px; height: 450px; padding: 5px; border-radius: 20px;}
     .ex_image3 { width: 400px; height: 450px; padding: 5px; border-radius: 20px;}
+    .ex_image4 { width: 350px; height: 450px; padding: 5px; border-radius: 20px;}
     #selectFruits {position: relative; top: 20px; padding: 20px 10px; background-color: rgba(60, 230, 60, .7); width: 350px; border-radius: 4px; box-shadow: 3px 3px #598a25;}
     #selectFruits div {padding-bottom: 5px;}
     #selectedFruits {position: relative; top: 35px;}
