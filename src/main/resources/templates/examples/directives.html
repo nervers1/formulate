@@ -2,20 +2,22 @@
 <html lang="ko" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-model="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Directives</title>
     <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
 <div id="simple">
     <input type="text" v-bind:placeholder="placeholder" v-model:value="message"> <!-- v-model : 모델의 값을 그대로 보여주고, 값 변경시 모델도 변경된다. -->
+
     <br />
+    <input type="text" v-bind:value="message"> <!-- v-bind : 입력한 모델의 값을 보여주기만 한다. 변경시 모델에 영향을 주지 않는다. -->    <br />
     <img class="ex_image" v-bind:src="imagePath" />
-<!--    <br />-->
+    <!--    <br />-->
     <img class="ex_image2" v-bind:src="imagePath2" />
     <img class="ex_image3" v-bind:src="imagePath3" />
     <img class="ex_image4" v-bind:src="imagePath4" />
-    <br />
-    <input type="text" v-bind:value="message"> <!-- v-bind : 입력한 모델의 값을 보여주기만 한다. 변경시 모델에 영향을 주지 않는다. -->
+    <img class="ex_image5" v-bind:src="imagePath5" />
 </div>
 <div id="selectFruits">
     <div>과일을 골라 보아요.</div>
@@ -39,7 +41,8 @@
         imagePath: 'https://cdna.artstation.com/p/assets/images/images/007/741/184/large/geoff-caldwell-rabbitsketch.jpg?1508207230',
         imagePath2: 'https://i.redd.it/qopwr7mp3og11.jpg',
         imagePath3: 'https://st4.depositphotos.com/20816142/23655/i/1600/depositphotos_236551988-stock-photo-sketch-rabbit-small-furry-pet.jpg',
-        imagePath4: 'https://i.pinimg.com/originals/9f/66/98/9f6698773a81d828e3f9b29a3b20c627.jpg'
+        imagePath4: 'https://i.pinimg.com/originals/9f/66/98/9f6698773a81d828e3f9b29a3b20c627.jpg',
+        imagePath5: 'https://drawingartpedia.co/wp-content/uploads/2017/10/3d-rabbit-pencil-drawing-drawings-pencils-3d-rabbit-drawings-pencils-3d-rabbit-3d-pencil-4.jpg'
     };
 
     var selectFruit = new Vue({
@@ -75,11 +78,12 @@
         /*-webkit-transform: scale(-1, 1);*/
         /*-o-transform: scale(-1, 1);*/
         /*transform: scale(-1, 1);*/
-        transform: rotate3d(1, 1, 1, 70deg);
+        transform: rotate3d(0, 1, 0, 180deg);
         /*filter: flipH()*/}
     .ex_image2 { width: 400px; height: 450px; padding: 5px; border-radius: 20px;}
     .ex_image3 { width: 400px; height: 450px; padding: 5px; border-radius: 20px;}
     .ex_image4 { width: 350px; height: 450px; padding: 5px; border-radius: 20px;}
+    .ex_image5 { width: 350px; height: 450px; padding: 5px; border-radius: 20px;}
     #selectFruits {position: relative; top: 20px; padding: 20px 10px; background-color: rgba(60, 230, 60, .7); width: 350px; border-radius: 4px; box-shadow: 3px 3px #598a25;}
     #selectFruits div {padding-bottom: 5px;}
     #selectedFruits {position: relative; top: 35px;}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js :: Event Bus Example</title>
+    <script src="http://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <child-component v-bind:propsdata="message"></child-component>
+</div>
+<script type="text/javascript">
+    // 이벤트 버스 선언
+    var eventBus = new Vue();
+    Vue.component('child-component', {
+        template: '<div>하위 컴포넌트 영역입니다. <button v-on:click="showLog">show</button><div>넘겨받은 값 : {{propsdata}}</div></div>',
+        props: ['propsdata'],
+        methods: {
+            showLog: function () {
+                // 이벤트 버스를 통해 상위 컴포넌트에 값을 전달
+                eventBus.$emit('triggerEventBus', 100);
+            }
+        }
+    });
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: '이것이 바로 루트가 넘겨준 값이다.'
+        },
+        created: function () {
+            // 상위 컴포넌트에서 리스닝하고 있는 이벤트
+            eventBus.$on('triggerEventBus', function(value) {
+                // 전달 받은 값을 출력한다.
+                console.log('이벤트를 전달받은 값 : ', value);
+            });
+        }
+    });
+</script>
+<style type="text/css">
+
+</style>
+</body>
+</html>
